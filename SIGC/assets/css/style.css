@@ -1,0 +1,92 @@
+/* Estilos base para SIGC */
+:root {
+  --bg: #0e1116;
+  --card: #161a22;
+  --accent: #ff9f1c;
+  --text: #e6e8ed;
+  --muted: #9aa0b3;
+  --border: #232a36;
+  --danger: #ff4d6d;
+  --success: #2ec4b6;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 20% 20%, #162032, #0b0e14 60%);
+  color: var(--text);
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  background: linear-gradient(120deg, #0f1724, #141d2f);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 22px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+header h1 { margin: 0; font-size: 18px; letter-spacing: 0.5px; }
+nav { margin-top: 8px; display: flex; gap: 12px; flex-wrap: wrap; }
+nav a {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #1d2535;
+  border: 1px solid var(--border);
+  font-weight: 600;
+}
+nav a:hover { background: #222c3f; }
+
+.main { max-width: 1100px; margin: 22px auto 32px; padding: 0 18px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+}
+.card h2 { margin-top: 0; }
+
+.table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+.table th, .table td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: left;
+}
+.table th { background: #1d2535; }
+.table tr:nth-child(every) { background: #121826; }
+
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  color: #0b0e14;
+  background: var(--accent);
+}
+.btn.secondary { background: #1d2535; color: var(--text); border-color: var(--border); }
+.btn.danger { background: var(--danger); color: #fff; }
+.btn.success { background: var(--success); color: #0b0e14; }
+.btn + .btn { margin-left: 6px; }
+
+form { display: grid; gap: 10px; margin-top: 12px; }
+label { font-weight: 600; color: var(--muted); }
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #111622;
+  color: var(--text);
+}
+input:focus, textarea:focus, select:focus { outline: 2px solid var(--accent); }
+
+.alert { padding: 10px 12px; border-radius: 10px; margin-top: 10px; }
+.alert.success { background: rgba(46, 196, 182, 0.12); border: 1px solid var(--success); }
+.alert.error { background: rgba(255, 77, 109, 0.12); border: 1px solid var(--danger); }
+
+.table-actions { display: flex; gap: 8px; }
+.footer { text-align: center; color: var(--muted); margin-top: 20px; font-size: 13px; }
